@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Quintero · Periodista & Estratega de Comunicación Digital</title>
+<meta name="description" content="Periodista digital, corresponsal internacional y estratega de comunicación. Especialista en narrativas digitales y comunicación de crisis. Barcelona, España.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0d0b;
+    --paper: #faf8f4;
+    --warm-mid: #e8e3d8;
+    --warm-dark: #c4b99a;
+    --accent: #c0392b;
+    --accent-light: #f5e6e4;
+    --muted: #7a7265;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink); font-size:16px; line-height:1.7; }
+
+  /* MASTHEAD */
+  .masthead { border-bottom:3px double var(--ink); }
+  .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:12px 40px; border-bottom:1px solid var(--warm-mid); font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+  .masthead-top a { color:var(--muted); text-decoration:none; }
+  .masthead-top a:hover { color:var(--accent); }
+  .masthead-main { text-align:center; padding:48px 40px 32px; }
+  .edition-tag { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px; }
+  .masthead-main h1 { font-family:'Playfair Display',serif; font-size:clamp(52px,8vw,96px); font-weight:900; line-height:1; letter-spacing:-0.02em; color:var(--ink); }
+  .tagline { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(16px,2vw,22px); color:var(--muted); margin-top:12px; }
+  .masthead-rule { height:1px; background:var(--ink); margin:24px 40px 0; }
+
+  /* SPECIALTY BAND */
+  .specialty-band { background:var(--accent); padding:10px 40px; display:flex; align-items:center; justify-content:center; gap:28px; flex-wrap:wrap; }
+  .specialty-band span { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#fff; font-weight:500; }
+  .specialty-band .dot { width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.5); }
+
+  /* NAV */
+  nav { border-bottom:1px solid var(--warm-mid); padding:0 40px; display:flex; overflow-x:auto; }
+  nav a { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); text-decoration:none; padding:14px 20px; border-right:1px solid var(--warm-mid); white-space:nowrap; transition:background 0.15s; }
+  nav a:first-child { border-left:1px solid var(--warm-mid); }
+  nav a:hover { background:var(--warm-mid); }
+  nav a.cta { color:var(--accent); }
+  nav a.cta:hover { background:var(--accent); color:#fff; }
+
+  /* LAYOUT */
+  .page { max-width:1100px; margin:0 auto; padding:0 40px; }
+
+  /* HERO */
+  .hero { display:grid; grid-template-columns:1fr 300px; gap:0; border-bottom:1px solid var(--warm-mid); }
+  .hero-left { padding:56px 48px 56px 0; border-right:1px solid var(--warm-mid); }
+  .kicker { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+  .kicker::before { content:''; width:24px; height:2px; background:var(--accent); display:inline-block; }
+  .hero-left h2 { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,44px); font-weight:700; line-height:1.15; margin-bottom:24px; }
+  .hero-left p { color:var(--muted); font-size:16px; max-width:540px; margin-bottom:14px; }
+  .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .tag { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:4px 12px; border:1px solid var(--warm-dark); color:var(--muted); }
+  .tag.featured { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .cta-row { display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; }
+  .btn-primary { background:var(--ink); color:var(--paper); padding:12px 28px; font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border:2px solid var(--ink); transition:background 0.15s; display:inline-block; }
+  .btn-primary:hover { background:var(--accent); border-color:var(--accent); }
+  .btn-secondary { padding:12px 28px; font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border:2px solid var(--ink); color:var(--ink); transition:background 0.15s; display:inline-block; }
+  .btn-secondary:hover { background:var(--warm-mid); }
+  .hero-right { padding:48px 0 48px 40px; display:flex; flex-direction:column; align-items:center; }
+  .avatar-wrap { width:190px; height:240px; border-radius:12px; overflow:hidden; border:3px solid var(--accent); margin-bottom:32px; flex-shrink:0; }
+  .avatar-wrap img { width:100%; height:100%; object-fit:cover; object-position:center 5%; }
+  .stats-block { display:flex; flex-direction:column; gap:22px; width:100%; }
+  .stat-item { border-left:3px solid var(--accent); padding-left:16px; }
+  .stat-item .num { font-family:'Playfair Display',serif; font-size:38px; font-weight:900; line-height:1; color:var(--ink); }
+  .stat-item .label { font-size:12px; color:var(--muted); margin-top:2px; font-family:'DM Mono',monospace; letter-spacing:0.05em; text-transform:uppercase; }
+
+  /* SECTION HEADERS */
+  .section-header { display:flex; align-items:center; gap:16px; padding:48px 0 24px; border-bottom:1px solid var(--ink); }
+  .section-header h2 { font-family:'Playfair Display',serif; font-size:30px; font-weight:700; }
+  .section-num { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); padding:4px 10px; }
+
+  /* HIGHLIGHTS */
+  .highlights-section { border-bottom:1px solid var(--warm-mid); }
+  .highlights-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:32px; margin-top:8px; padding-bottom:48px; }
+  .highlight-item { padding:32px 0; border-top:3px solid var(--warm-mid); transition:border-color 0.2s; }
+  .highlight-item:hover { border-color:var(--accent); }
+  .highlight-item.featured-item { border-color:var(--accent); }
+  .icon-label { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+  .highlight-item h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; margin-bottom:10px; line-height:1.2; }
+  .highlight-item p { font-size:15px; color:var(--muted); line-height:1.6; }
+
+  /* PORTFOLIO */
+  .portfolio-section { border-bottom:1px solid var(--warm-mid); }
+  .portfolio-featured { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--warm-mid); border:1px solid var(--warm-mid); border-top:none; }
+  .portfolio-rest { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--warm-mid); border:1px solid var(--warm-mid); border-top:none; }
+  .portfolio-card { background:var(--paper); padding:28px 24px; text-decoration:none; color:inherit; display:block; transition:background 0.15s; }
+  .portfolio-card:hover { background:var(--accent-light); }
+  .portfolio-card.featured { padding:36px 32px; }
+  .card-meta { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .outlet-tag { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; padding:3px 10px; border:1px solid; }
+  .outlet-tag.tv { color:#185fa5; border-color:#185fa5; }
+  .outlet-tag.espectador { color:#0f6e56; border-color:#0f6e56; }
+  .outlet-tag.diari { color:var(--accent); border-color:var(--accent); }
+  .card-type { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .portfolio-card h3 { font-family:'Playfair Display',serif; font-weight:700; line-height:1.2; margin-bottom:10px; color:var(--ink); }
+  .portfolio-card.featured h3 { font-size:22px; }
+  .portfolio-card:not(.featured) h3 { font-size:17px; }
+  .portfolio-card p { font-size:14px; color:var(--muted); line-height:1.55; margin-bottom:14px; }
+  .read-link { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:6px; transition:gap 0.15s; }
+  .portfolio-card:hover .read-link { gap:12px; }
+  .read-link::after { content:'→'; }
+
+  /* EXPERIENCE */
+  .experience-section { border-bottom:1px solid var(--warm-mid); }
+  .exp-grid { display:grid; grid-template-columns:200px 1fr; gap:0; }
+  .exp-item-date { padding:32px 32px 32px 0; border-right:1px solid var(--warm-mid); border-bottom:1px solid var(--warm-mid); }
+  .year-range { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.06em; color:var(--muted); text-transform:uppercase; line-height:1.6; }
+  .org-tag { font-family:'DM Mono',monospace; font-size:11px; padding:3px 8px; display:inline-block; margin-top:8px; letter-spacing:0.06em; text-transform:uppercase; }
+  .org-tag.prensa { background:var(--accent); color:#fff; }
+  .org-tag.inst { background:var(--ink); color:#fff; }
+  .org-tag.media { background:#185fa5; color:#fff; }
+  .org-tag.digital { background:#0f6e56; color:#fff; }
+  .exp-item-content { padding:32px 0 32px 40px; border-bottom:1px solid var(--warm-mid); }
+  .exp-item-content h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; margin-bottom:4px; }
+  .org-name { font-size:14px; color:var(--muted); margin-bottom:12px; font-family:'DM Mono',monospace; }
+  .exp-item-content ul { list-style:none; margin-top:10px; }
+  .exp-item-content ul li { font-size:15px; color:var(--muted); padding:3px 0 3px 16px; position:relative; }
+  .exp-item-content ul li::before { content:'—'; position:absolute; left:0; color:var(--accent); font-size:13px; }
+
+  /* SKILLS */
+  .skills-section { border-bottom:1px solid var(--warm-mid); padding-bottom:48px; }
+  .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--warm-mid); border:1px solid var(--warm-mid); border-top:none; }
+  .skill-card { background:var(--paper); padding:28px 24px; }
+  .skill-card h3 { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--warm-mid); }
+  .skill-card ul { list-style:none; }
+  .skill-card ul li { font-size:14px; color:var(--muted); padding:4px 0; border-bottom:1px dashed var(--warm-mid); }
+  .skill-card ul li:last-child { border-bottom:none; }
+
+  /* EDUCATION */
+  .education-section { border-bottom:1px solid var(--warm-mid); padding-bottom:48px; }
+  .edu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--warm-mid); border:1px solid var(--warm-mid); border-top:none; }
+  .edu-card { background:var(--paper); padding:28px 24px; }
+  .edu-card .degree { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; margin-bottom:6px; line-height:1.3; }
+  .edu-card .institution { font-family:'DM Mono',monospace; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+
+  /* CONTACT */
+  .contact-section { background:var(--ink); color:var(--paper); padding:64px 0; }
+  .contact-section .page { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+  .contact-section h2 { font-family:'Playfair Display',serif; font-size:42px; font-weight:900; line-height:1.1; margin-bottom:16px; }
+  .contact-section h2 em { color:var(--accent); font-style:italic; }
+  .contact-section p { color:var(--warm-dark); font-size:16px; line-height:1.6; }
+  .contact-links { display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1); }
+  .contact-link-item { display:flex; flex-direction:column; padding:20px 24px; background:rgba(255,255,255,0.04); text-decoration:none; transition:background 0.15s; }
+  .contact-link-item:hover { background:rgba(255,255,255,0.08); }
+  .link-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
+  .link-value { color:var(--paper); font-size:15px; }
+
+  /* FOOTER */
+  footer { text-align:center; padding:24px 40px; border-top:1px solid rgba(255,255,255,0.1); background:var(--ink); font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--muted); text-transform:uppercase; }
+  footer .acc { color:var(--accent); }
+
+  /* RESPONSIVE */
+  @media (max-width:768px) {
+    .masthead-top { padding:12px 20px; flex-direction:column; gap:4px; text-align:center; }
+    nav { padding:0 20px; }
+    .page { padding:0 20px; }
+    .specialty-band { padding:10px 20px; gap:16px; }
+    .hero { grid-template-columns:1fr; }
+    .avatar-wrap { display:none; }
+    .hero-left { padding:40px 0 32px; border-right:none; border-bottom:1px solid var(--warm-mid); }
+    .hero-right { padding:32px 0 40px; align-items:flex-start; }
+    .highlights-grid { grid-template-columns:1fr; }
+    .portfolio-featured { grid-template-columns:1fr; }
+    .portfolio-rest { grid-template-columns:1fr; }
+    .exp-grid { grid-template-columns:1fr; }
+    .exp-item-date { border-right:none; border-bottom:none; padding:32px 0 8px; }
+    .exp-item-content { padding:12px 0 32px; }
+    .skills-grid { grid-template-columns:1fr; }
+    .edu-grid { grid-template-columns:1fr; }
+    .contact-section .page { grid-template-columns:1fr; gap:40px; }
+    .section-header { flex-direction:column; align-items:flex-start; gap:8px; }
+    .masthead-rule { margin:16px 20px 0; }
+    .masthead-main { padding:36px 20px 24px; }
+  }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .masthead-main { animation:fadeUp 0.6s ease both; }
+  .hero-left { animation:fadeUp 0.6s 0.1s ease both; }
+  .hero-right { animation:fadeUp 0.6s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Madrid · Barcelona — Remoto Europa y Latam</span>
+    <span>Periodista · Estratega Digital · Corresponsal</span>
+    <a href="/cdn-cgi/l/email-protection#1c787d6a75786d69757268796e736c796e757378756f687d5c7b717d7570327f7371"><span class="__cf_email__" data-cfemail="3f5b5e49565b4e4a56514b5a4d504f5a4d56505b564c4b5e7f58525e5653115c5052">[email&#160;protected]</span></a>
+  </div>
+  <div class="masthead-main">
+    <span class="edition-tag">Portafolio Profesional · 2026</span>
+    <h1>David Quintero</h1>
+    <p class="tagline">Periodista, estratega de comunicación &amp; corresponsal internacional</p>
+  </div>
+  <div class="masthead-rule"></div>
+</header>
+
+<div class="specialty-band">
+  <span>Narrativas Digitales</span><div class="dot"></div>
+  <span>Comunicación de Crisis</span><div class="dot"></div>
+  <span>Corresponsalía Internacional</span><div class="dot"></div>
+  <span>SEO Editorial</span><div class="dot"></div>
+  <span>Storytelling Estratégico</span>
+</div>
+
+<nav>
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#portfolio">Portafolio</a>
+  <a href="#experiencia">Trayectoria</a>
+  <a href="#competencias">Competencias</a>
+  <a href="#formacion">Formación</a>
+  <a href="#contacto">Contacto</a>
+  <a href="/cdn-cgi/l/email-protection#0b6f6a7d626f7a7e62657f6e79647b6e7962646f62787f6a4b6c666a626725686466" class="cta">✉ Contratarme</a>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="sobre-mi">
+  <div class="page">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="kicker">Quién soy</div>
+        <h2>Periodista, editor y estratega de comunicación con experiencia sólida en medios y en gestión de crisis.</h2>
+        <p>Más de 7 años de trayectoria entre el periodismo y la comunicación, con experiencia sólida en Latinoamérica y España.</p>
+        <p>He trabajado como reportero, editor y corresponsal de televisión, y también como responsable de comunicación institucional: gestionando crisis reputacionales, entrenando voceros y diseñando estrategias de posicionamiento público. Un perfil mixto que combina base periodística con visión estratégica.</p>
+        <p style="margin-top:10px;font-size:15px;"><strong style="color:var(--ink);">Máster en Comunicación Digital</strong> · Universidad de Alicante &nbsp;|&nbsp; Posgrado en Narrativas Digitales</p>
+        <div class="tag-row">
+          <span class="tag featured">Narrativas Digitales</span>
+          <span class="tag featured">Comunicación de Crisis</span>
+          <span class="tag">Entrenamiento de Voceros</span>
+          <span class="tag">Corresponsalía TV</span>
+          <span class="tag">Periodismo Digital</span>
+          <span class="tag">SEO Editorial</span>
+          <span class="tag">Com. Institucional</span>
+        </div>
+        <div class="cta-row">
+          <a href="/cdn-cgi/l/email-protection#224643544b4653574b4c5647504d5247504b4d464b51564362454f434b4e0c414d4f" class="btn-primary">Contactar ahora</a>
+          <a href="https://www.linkedin.com/in/david-quintero-1668b6185/" target="_blank" class="btn-secondary">Ver LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="avatar-wrap">
+          <img src="data:image/jpeg;base64,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" alt="David Quintero">
+        </div>
+        <div class="stats-block">
+          <div class="stat-item"><div class="num">7+</div><div class="label">Años de experiencia</div></div>
+          <div class="stat-item"><div class="num">2</div><div class="label">Países de trabajo activo</div></div>
+          <div class="stat-item"><div class="num">8+</div><div class="label">Organizaciones clave</div></div>
+          <div class="stat-item"><div class="num">2</div><div class="label">Especializaciones</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section class="highlights-section">
+  <div class="page">
+    <div class="section-header"><span class="section-num">§01</span><h2>Lo que traigo a cada proyecto</h2></div>
+    <div class="highlights-grid">
+      <div class="highlight-item featured-item">
+        <div class="icon-label">Especialidad principal</div>
+        <h3>Narrativas Digitales</h3>
+        <p>Construcción de relatos complejos para entornos digitales. Storytelling editorial, adaptación multiplataforma y producción de contenido con criterio periodístico y alcance masivo.</p>
+      </div>
+      <div class="highlight-item featured-item">
+        <div class="icon-label">Especialidad principal</div>
+        <h3>Comunicación de Crisis e Institucional</h3>
+        <p>Gestión de crisis reputacionales en contextos de alta exposición, incluyendo el Paro Nacional colombiano. Entrenamiento de voceros, diseño de mensajes clave y comunicación institucional en el Ministerio de Cultura y alcaldías de Cali y Palmira.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="icon-label">Corresponsalía Internacional</div>
+        <h3>Cobertura desde el terreno</h3>
+        <p>Corresponsal para Caracol TV y El Espectador. Cobertura en directo de la catástrofe de la DANA en Valencia, el proceso de paz entre el gobierno colombiano y las guerrillas, y situaciones de derechos humanos en contextos de alta presión informativa.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="icon-label">Estrategia Digital</div>
+        <h3>SEO, redes y audiencias</h3>
+        <p>Planificación editorial digital, optimización SEO on-page, gestión de comunidades y analítica de métricas para crecimiento de audiencias en España y Latinoamérica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO -->
+<section id="portfolio" class="portfolio-section">
+  <div class="page">
+    <div class="section-header"><span class="section-num">§02</span><h2>Trabajos publicados</h2></div>
+  </div>
+  <div class="page">
+    <div class="portfolio-featured">
+      <a class="portfolio-card featured" href="https://x.com/NoticiasCaracol/status/1852042865355973107" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="outlet-tag tv">Noticias Caracol TV</span><span class="card-type">Corresponsalía · Oct 2024</span></div>
+        <h3>Cobertura en directo de la DANA — Valencia</h3>
+        <p>Corresponsalía para el principal informativo colombiano desde el epicentro de la catástrofe. Emitido en prime time. Una de las mayores tragedias naturales de España en décadas.</p>
+        <span class="read-link">Ver cobertura</span>
+      </a>
+      <a class="portfolio-card featured" href="https://www.elespectador.com/mundo/europa/cronica-los-dias-desde-el-epicentro-de-la-dana-en-valencia/" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="outlet-tag espectador">El Espectador</span><span class="card-type">Crónica · Oct 2024</span></div>
+        <h3>Los días desde el epicentro de la DANA en Valencia</h3>
+        <p>Crónica de largo aliento en uno de los principales diarios de Colombia. Narración desde el terreno que combina testimonio, contexto y rigor periodístico.</p>
+        <span class="read-link">Leer en El Espectador</span>
+      </a>
+    </div>
+    <div class="portfolio-rest">
+      <a class="portfolio-card" href="https://www.diaridebarcelona.cat/w/quan-odi-espera-al-baixar-escenari" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="outlet-tag diari">Diari de Barcelona</span><span class="card-type">Reportaje</span></div>
+        <h3>Derechos de la comunidad LGTBiQ+ en Barcelona</h3>
+        <p>Reportaje sobre discriminación y espacios seguros en la ciudad.</p>
+        <span class="read-link">Leer reportaje</span>
+      </a>
+      <a class="portfolio-card" href="https://www.diaridebarcelona.cat/w/nit-ritme-classica-barceloneta" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="outlet-tag diari">Diari de Barcelona</span><span class="card-type">Crónica cultural</span></div>
+        <h3>Noche de ritmo clásico en la Barceloneta</h3>
+        <p>Crónica de concierto al aire libre en el barrio marinero de Barcelona.</p>
+        <span class="read-link">Leer crónica</span>
+      </a>
+      <a class="portfolio-card" href="https://www.diaridebarcelona.cat/w/colombia-esta-tornant-pitjors-anys-violencia" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="outlet-tag diari">Diari de Barcelona</span><span class="card-type">Análisis</span></div>
+        <h3>Colombia: análisis de la situación de violencia</h3>
+        <p>Contexto histórico y perspectiva internacional sobre la escalada de violencia.</p>
+        <span class="read-link">Leer análisis</span>
+      </a>
+      <a class="portfolio-card" href="https://www.diaridebarcelona.cat/w/tatuar-supervivents-cancer-tasca-altruista-tres-artistes-pontevedra" target="_blank" rel="noopener" style="grid-column:1/-1;">
+        <div class="card-meta"><span class="outlet-tag diari">Diari de Barcelona</span><span class="card-type">Historia humana</span></div>
+        <h3>Tatuar a supervivientes de cáncer: la tarea altruista de tres artistas de Pontevedra</h3>
+        <p>Historia de impacto humano sobre artistas del tatuaje que trabajan gratuitamente devolviendo confianza a través del arte corporal.</p>
+        <span class="read-link">Leer historia</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia" class="experience-section">
+  <div class="page">
+    <div class="section-header"><span class="section-num">§03</span><h2>Trayectoria profesional</h2></div>
+  </div>
+  <div class="page">
+    <div class="exp-grid">
+
+      <div class="exp-item-date"><div class="year-range">Jun 2025 — Ago 2025</div><span class="org-tag prensa">Prensa</span></div>
+      <div class="exp-item-content">
+        <h3>Periodista Digital / Editor de Contenidos</h3>
+        <div class="org-name">Diari de Barcelona · Barcelona, España</div>
+        <ul>
+          <li>Diseño de enfoque editorial y jerarquización estratégica de contenidos digitales</li>
+          <li>Producción de contenido optimizado para SEO en español y catalán</li>
+          <li>Conversión de actualidad compleja en narrativa estructurada de alto consumo</li>
+          <li>Coordinación editorial en cierres bajo presión</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Oct 2024 — Mar 2025</div><span class="org-tag digital">Digital</span></div>
+      <div class="exp-item-content">
+        <h3>Social Media Manager</h3>
+        <div class="org-name">Parole · Alicante, España</div>
+        <ul>
+          <li>Gestión de redes sociales y planificación editorial de contenidos</li>
+          <li>Redacción de copys persuasivos para aumentar interacción y engagement</li>
+          <li>Seguimiento de métricas y optimización de publicaciones</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date">
+        <div class="year-range">Oct 2022 — Ago 2024<br><small style="color:var(--accent);font-size:10px;">+ Corresponsal DANA Oct 2024</small></div>
+        <span class="org-tag media">Televisión</span>
+      </div>
+      <div class="exp-item-content">
+        <h3>Corresponsal Digital / Reportero de TV</h3>
+        <div class="org-name">Noticias Caracol / Caracol TV · España &amp; Colombia</div>
+        <ul>
+          <li>Cobertura especial DANA Valencia octubre 2024 — emitida en prime time para toda Colombia</li>
+          <li>Corresponsalía internacional: procesos de paz y derechos humanos</li>
+          <li>Producción de piezas audiovisuales y contenidos digitales multiplataforma</li>
+          <li>Crónica publicada en El Espectador desde el epicentro de la DANA</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Ene 2022 — Sep 2022</div><span class="org-tag inst">Institucional</span></div>
+      <div class="exp-item-content">
+        <h3>Enlace de Comunicaciones</h3>
+        <div class="org-name">Ministerio de Cultura · Colombia</div>
+        <ul>
+          <li>Redacción y edición de comunicados oficiales y contenidos estratégicos</li>
+          <li>Articulación entre equipos técnicos y comunicación externa</li>
+          <li>Gestión de contenidos digitales en redes institucionales</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Jun 2021 — Feb 2022</div><span class="org-tag inst">Institucional</span></div>
+      <div class="exp-item-content">
+        <h3>Comunicador Institucional</h3>
+        <div class="org-name">Gestarsalud · Colombia</div>
+        <ul>
+          <li>Desarrollo de comunicación corporativa y contenidos reputacionales</li>
+          <li>Redacción de materiales internos y externos de comunicación</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Jun 2020 — Ago 2020</div><span class="org-tag digital">Digital</span></div>
+      <div class="exp-item-content">
+        <h3>Periodista Digital</h3>
+        <div class="org-name">Kienyke.com · Colombia</div>
+        <ul>
+          <li>Producción diaria de contenidos digitales con enfoque SEO</li>
+          <li>Redacción orientada a posicionamiento, tráfico y engagement</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Ene 2020 — Ene 2021</div><span class="org-tag inst">Institucional</span></div>
+      <div class="exp-item-content">
+        <h3>Jefe de Prensa / Responsable de Comunicación</h3>
+        <div class="org-name">Alcaldía de Palmira – Secretaría de Seguridad · Colombia</div>
+        <ul>
+          <li>Liderazgo de comunicación institucional y gestión de vocería</li>
+          <li>Dirección de comunicación de crisis durante el Paro Nacional</li>
+          <li>Relación estratégica con medios en contexto de alta exposición mediática</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Ene 2019 — Dic 2019</div><span class="org-tag inst">Institucional</span></div>
+      <div class="exp-item-content">
+        <h3>Enlace Responsable de Comunicaciones</h3>
+        <div class="org-name">Alcaldía de Cali · Colombia</div>
+        <ul>
+          <li>Redacción de comunicados institucionales</li>
+          <li>Coordinación de agenda pública y atención a medios</li>
+        </ul>
+      </div>
+
+      <div class="exp-item-date"><div class="year-range">Ene 2018 — Ago 2018</div><span class="org-tag prensa">Prensa</span></div>
+      <div class="exp-item-content">
+        <h3>Reportero</h3>
+        <div class="org-name">Periódico El País · Cali, Colombia</div>
+        <ul>
+          <li>Redacción para edición impresa y revistas de interés público</li>
+          <li>Desarrollo de historias con enfoque analítico</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIAS -->
+<section id="competencias" class="skills-section">
+  <div class="page">
+    <div class="section-header"><span class="section-num">§04</span><h2>Competencias clave</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Periodismo &amp; Narrativas</h3>
+        <ul>
+          <li>Narrativas digitales</li>
+          <li>Redacción periodística (digital e impresa)</li>
+          <li>Edición y dirección editorial</li>
+          <li>Titulares y SEO on-page</li>
+          <li>CMS y publicación web</li>
+          <li>Corresponsalía internacional</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Comunicación Estratégica</h3>
+        <ul>
+          <li>Comunicación de crisis</li>
+          <li>Storytelling estratégico</li>
+          <li>Gestión de reputación pública</li>
+          <li>Vocería y mensajes clave</li>
+          <li>Relaciones con medios</li>
+          <li>IA aplicada a comunicación</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Digital &amp; Analítica</h3>
+        <ul>
+          <li>Social Media Management</li>
+          <li>Planificación editorial digital</li>
+          <li>Copywriting persuasivo</li>
+          <li>Google Analytics</li>
+          <li>Crecimiento de audiencias</li>
+          <li>Español · Inglés · Catalán</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion" class="education-section">
+  <div class="page">
+    <div class="section-header"><span class="section-num">§05</span><h2>Formación académica</h2></div>
+    <div class="edu-grid">
+      <div class="edu-card" style="border-left:3px solid var(--accent);">
+        <div class="degree">Máster en Comunicación Digital</div>
+        <div class="institution">Universidad de Alicante · España</div>
+      </div>
+      <div class="edu-card"><div class="degree">Posgrado en Comunicación y Narrativas Digitales</div><div class="institution">Politécnico Grancolombiano · Colombia</div></div>
+      <div class="edu-card"><div class="degree">Comunicador Social y Periodista</div><div class="institution">Universidad UNIMINUTO · Colombia</div></div>
+      <div class="edu-card"><div class="degree">Diplomado en Productividad con IA</div><div class="institution">Banco Santander</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section">
+  <div class="page">
+    <div>
+      <h2>Hablemos.<br><em>Trabajemos.</em></h2>
+      <p>Disponible para periodismo digital, corresponsalía, comunicación institucional, edición y estrategia de contenidos para España y Latinoamérica.</p>
+      <p style="margin-top:12px;">Presencial en Madrid y Barcelona. Remoto para Europa y Latinoamérica.</p>
+    </div>
+    <div class="contact-links">
+      <a href="/cdn-cgi/l/email-protection#90f4f1e6f9f4e1e5f9fee4f5e2ffe0f5e2f9fff4f9e3e4f1d0f7fdf1f9fcbef3fffd" class="contact-link-item">
+        <span class="link-label">Correo electrónico</span>
+        <span class="link-value"><span class="__cf_email__" data-cfemail="c4a0a5b2ada0b5b1adaab0a1b6abb4a1b6adaba0adb7b0a584a3a9a5ada8eaa7aba9">[email&#160;protected]</span></span>
+      </a>
+      <a href="tel:+34722505827" class="contact-link-item">
+        <span class="link-label">Teléfono / WhatsApp</span>
+        <span class="link-value">+34 722 505 827</span>
+      </a>
+      <a href="https://www.linkedin.com/in/david-quintero-1668b6185/" target="_blank" class="contact-link-item">
+        <span class="link-label">LinkedIn</span>
+        <span class="link-value">linkedin.com/in/david-quintero-1668b6185</span>
+      </a>
+      <a href="https://x.com/DavidQuintero42" target="_blank" class="contact-link-item">
+        <span class="link-label">X (Twitter)</span>
+        <span class="link-value">x.com/DavidQuintero42</span>
+      </a>
+      <a href="https://davidquinteroperiodista-cmyk.github.io/" target="_blank" class="contact-link-item">
+        <span class="link-label">Portafolio web</span>
+        <span class="link-value">davidquinteroperiodista-cmyk.github.io</span>
+      </a>
+    </div>  </div>
+</section>
+
+</main>
+
+<footer>
+  <span
