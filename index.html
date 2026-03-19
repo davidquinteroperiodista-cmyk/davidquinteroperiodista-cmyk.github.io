@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Quintero · Periodista & Estratega de Comunicación Digital</title>
+<meta name="description" content="Periodista digital, corresponsal internacional y estratega de comunicación con más de 6 años de experiencia en España y Latinoamérica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0d0b;
+    --paper: #faf8f4;
+    --warm-mid: #e8e3d8;
+    --warm-dark: #c4b99a;
+    --accent: #c0392b;
+    --accent-light: #f5e6e4;
+    --muted: #7a7265;
+    --col-max: 860px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* HEADER / MASTHEAD */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 0;
+  }
+
+  .masthead-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    border-bottom: 1px solid var(--warm-mid);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .masthead-top a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .masthead-main {
+    text-align: center;
+    padding: 48px 40px 32px;
+  }
+
+  .masthead-main .edition-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .masthead-main h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .masthead-main .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--muted);
+    margin-top: 12px;
+  }
+
+  .masthead-rule {
+    height: 1px;
+    background: var(--ink);
+    margin: 24px 40px 0;
+  }
+
+  /* NAV */
+  nav {
+    border-bottom: 1px solid var(--warm-mid);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-right: 1px solid var(--warm-mid);
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+
+  nav a:first-child { border-left: 1px solid var(--warm-mid); }
+
+  nav a:hover { background: var(--warm-mid); }
+
+  /* LAYOUT */
+  .page { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+  /* HERO SECTION */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 0;
+    border-bottom: 1px solid var(--warm-mid);
+  }
+
+  .hero-left {
+    padding: 56px 48px 56px 0;
+    border-right: 1px solid var(--warm-mid);
+  }
+
+  .hero-left .kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-left .kicker::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .hero-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .hero-left p {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 540px;
+    margin-bottom: 16px;
+  }
+
+  .hero-left .cta-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    transition: background 0.15s, color 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .btn-secondary {
+    padding: 12px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    transition: background 0.15s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { background: var(--warm-mid); }
+
+  .hero-right {
+    padding: 56px 0 56px 48px;
+  }
+
+  .stats-block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .stat-item {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .stat-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .stat-item .label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* SECTION TITLES */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 48px 0 24px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 0;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .section-header .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 10px;
+  }
+
+  /* EXPERIENCE SECTION */
+  .experience-section {
+    border-bottom: 1px solid var(--warm-mid);
+    padding-bottom: 0;
+  }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: contents;
+  }
+
+  .exp-item-date {
+    padding: 32px 32px 32px 0;
+    border-right: 1px solid var(--warm-mid);
+    border-bottom: 1px solid var(--warm-mid);
+  }
+
+  .exp-item-date .year-range {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .exp-item-date .org-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    background: var(--accent);
+    color: #fff;
+    padding: 3px 8px;
+    display: inline-block;
+    margin-top: 8px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .exp-item-date .org-tag.inst { background: var(--ink); }
+  .exp-item-date .org-tag.media { background: #185fa5; }
+  .exp-item-date .org-tag.digital { background: #0f6e56; }
+
+  .exp-item-content {
+    padding: 32px 0 32px 40px;
+    border-bottom: 1px solid var(--warm-mid);
+  }
+
+  .exp-item-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .exp-item-content .org-name {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .exp-item-content p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .exp-item-content ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .exp-item-content ul li {
+    font-size: 15px;
+    color: var(--muted);
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+
+  .exp-item-content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 13px;
+  }
+
+  /* SKILLS SECTION */
+  .skills-section {
+    border-bottom: 1px solid var(--warm-mid);
+    padding-bottom: 48px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--warm-mid);
+    border: 1px solid var(--warm-mid);
+    margin-top: 0;
+  }
+
+  .skill-card {
+    background: var(--paper);
+    padding: 28px 24px;
+  }
+
+  .skill-card h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--warm-mid);
+  }
+
+  .skill-card ul {
+    list-style: none;
+  }
+
+  .skill-card ul li {
+    font-size: 14px;
+    color: var(--muted);
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--warm-mid);
+  }
+
+  .skill-card ul li:last-child { border-bottom: none; }
+
+  /* EDUCATION SECTION */
+  .education-section {
+    border-bottom: 1px solid var(--warm-mid);
+    padding-bottom: 48px;
+  }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--warm-mid);
+    border: 1px solid var(--warm-mid);
+  }
+
+  .edu-card {
+    background: var(--paper);
+    padding: 28px 24px;
+  }
+
+  .edu-card .degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .edu-card .institution {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* HIGHLIGHTS / WHAT I DO */
+  .highlights-section {
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--warm-mid);
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 8px;
+  }
+
+  .highlight-item {
+    padding: 32px 0;
+    border-top: 3px solid var(--warm-mid);
+    transition: border-color 0.2s;
+  }
+
+  .highlight-item:hover { border-color: var(--accent); }
+
+  .highlight-item .icon-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .highlight-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .highlight-item p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 64px 0;
+    margin-top: 0;
+  }
+
+  .contact-section .page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .contact-section p {
+    color: var(--warm-dark);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-link-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .contact-link-item:hover {
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .contact-link-item .link-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .contact-link-item .link-value {
+    color: var(--paper);
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 24px 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    height: 1px;
+    background: var(--warm-mid);
+  }
+
+  /* TAGS */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid var(--warm-dark);
+    color: var(--muted);
+    background: var(--paper);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .masthead-top { padding: 12px 20px; }
+    nav { padding: 0 20px; }
+    .page { padding: 0 20px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 40px 0 32px; border-right: none; border-bottom: 1px solid var(--warm-mid); }
+    .hero-right { padding: 32px 0 40px; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-item-date { border-right: none; border-bottom: none; padding: 32px 0 0; }
+    .exp-item-content { padding: 12px 0 32px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .contact-section .page { grid-template-columns: 1fr; gap: 40px; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .masthead-main { padding: 36px 20px 24px; }
+    .masthead-rule { margin: 16px 20px 0; }
+  }
+
+  /* SMOOTH ANIMATION */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .masthead-main { animation: fadeUp 0.6s ease both; }
+  .hero-left { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-right { animation: fadeUp 0.6s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Barcelona, España — Disponible remoto</span>
+    <span>Periodista · Estratega Digital · Corresponsal</span>
+    <span>davidquinteroperiodista@gmail.com</span>
+  </div>
+  <div class="masthead-main">
+    <span class="edition-tag">Portafolio Profesional · 2025</span>
+    <h1>David Quintero</h1>
+    <p class="tagline">Periodista, Estratega de Comunicación &amp; Corresponsal Internacional</p>
+  </div>
+  <div class="masthead-rule"></div>
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#experiencia">Trayectoria</a>
+    <a href="#competencias">Competencias</a>
+    <a href="#formacion">Formación</a>
+    <a href="#contacto">Contacto</a>
+    <a href="mailto:davidquinteroperiodista@gmail.com">✉ Contratarme</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<main>
+<section id="sobre-mi">
+  <div class="page">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="kicker">Quién soy</div>
+        <h2>Narrativa de alto impacto. Estrategia que funciona.</h2>
+        <p>Periodista con más de 6 años de experiencia en medios internacionales, comunicación institucional y entornos digitales en España y Latinoamérica.</p>
+        <p>Especializado en traducir contextos complejos —crisis, política, procesos institucionales— en narrativas claras y de alto alcance. Perfil híbrido: pensamiento estratégico y ejecución ágil.</p>
+        <div class="tag-row">
+          <span class="tag">Periodismo Digital</span>
+          <span class="tag">Corresponsal Internacional</span>
+          <span class="tag">Comunicación Institucional</span>
+          <span class="tag">SEO Editorial</span>
+          <span class="tag">Storytelling</span>
+          <span class="tag">Gestión de Crisis</span>
+        </div>
+        <div class="cta-row">
+          <a href="mailto:davidquinteroperiodista@gmail.com" class="btn-primary">Contactar ahora</a>
+          <a href="#experiencia" class="btn-secondary">Ver trayectoria</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="stats-block">
+          <div class="stat-item">
+            <div class="num">6+</div>
+            <div class="label">Años de experiencia</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">2</div>
+            <div class="label">Países de trabajo activo</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">5</div>
+            <div class="label">Organizaciones clave</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">1</div>
+            <div class="label">Máster en Com. Digital</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE OFREZCO -->
+<section class="highlights-section">
+  <div class="page">
+    <div class="section-header">
+      <span class="section-num">§01</span>
+      <h2>Lo que traigo a cada proyecto</h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <div class="icon-label">Periodismo & Edición</div>
+        <h3>Contenido con criterio editorial</h3>
+        <p>Producción, edición y optimización de contenidos para web, redes sociales y medios impresos. Titulares con criterio SEO, jerarquización estratégica y narrativa estructurada.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="icon-label">Corresponsalía Internacional</div>
+        <h3>Cobertura desde el terreno</h3>
+        <p>Experiencia en cobertura internacional para Caracol TV/Noticias Caracol. Cobertura especial de crisis como la DANA de Valencia 2024, procesos de paz y derechos humanos.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="icon-label">Comunicación Institucional</div>
+        <h3>Estrategia, reputación y crisis</h3>
+        <p>Gestión de vocería, comunicados oficiales y posicionamiento público. Dirección de comunicación de crisis durante el Paro Nacional en Colombia.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="icon-label">Estrategia Digital</div>
+        <h3>SEO, redes y comunidades</h3>
+        <p>Planificación editorial digital, optimización SEO on-page, gestión de redes sociales, analítica de métricas y crecimiento de audiencias en España y Latinoamérica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia" class="experience-section">
+  <div class="page">
+    <div class="section-header">
+      <span class="section-num">§02</span>
+      <h2>Trayectoria profesional</h2>
+    </div>
+  </div>
+  <div class="page">
+    <div class="exp-grid">
+
+      <div class="exp-item">
+        <div class="exp-item-date">
+          <div class="year-range">2023 — Actualidad</div>
+          <span class="org-tag media">Prensa</span>
+        </div>
+        <div class="exp-item-content">
+          <h3>Periodista Digital / Editor de Contenidos</h3>
+          <div class="org-name">Diari de Barcelona · España</div>
+          <ul>
+            <li>Diseño de enfoque editorial y jerarquización estratégica de contenidos digitales</li>
+            <li>Producción de contenido optimizado para SEO y redes sociales en español y catalán</li>
+            <li>Conversión de actualidad compleja en narrativa estructurada y clara</li>
+            <li>Coordinación editorial en cierres bajo presión</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-item-date">
+          <div class="year-range">2022 — 2023</div>
+          <span class="org-tag digital">Digital</span>
+        </div>
+        <div class="exp-item-content">
+          <h3>Community Manager</h3>
+          <div class="org-name">Parole · Alicante, España</div>
+          <ul>
+            <li>Gestión de redes sociales, planificación y calendarización de contenidos</li>
+            <li>Redacción de copys persuasivos para aumentar interacción y engagement</li>
+            <li>Seguimiento de métricas para optimizar publicaciones</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-item-date">
+          <div class="year-range">2020 — 2022</div>
+          <span class="org-tag media">Televisión</span>
+        </div>
+        <div class="exp-item-content">
+          <h3>Corresponsal Digital / Reportero de TV</h3>
+          <div class="org-name">Noticias Caracol / Caracol TV · España &amp; Colombia</div>
+          <ul>
+            <li>Cobertura especial de crisis: DANA Valencia 2024, procesos de paz, derechos humanos</li>
+            <li>Representación informativa en entornos internacionales</li>
+            <li>Producción de contenidos digitales y audiovisuales para plataformas online</li>
+            <li>Adaptación de contenidos a formatos de alto consumo en redes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-item-date">
+          <div class="year-range">2018 — 2020</div>
+          <span class="org-tag inst">Institucional</span>
+        </div>
+        <div class="exp-item-content">
+          <h3>Enlace de Comunicaciones</h3>
+          <div class="org-name">Ministerio de Cultura · Colombia</div>
+          <ul>
+            <li>Redacción y edición de comunicados oficiales y contenidos estratégicos</li>
+            <li>Articulación entre equipos técnicos y comunicación externa</li>
+            <li>Gestión de contenidos digitales y difusión en redes institucionales</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-item-date">
+          <div class="year-range">2016 — 2018</div>
+          <span class="org-tag inst">Institucional</span>
+        </div>
+        <div class="exp-item-content">
+          <h3>Jefe de Prensa / Responsable de Comunicación</h3>
+          <div class="org-name">Alcaldía de Palmira – Secretaría de Seguridad · Colombia</div>
+          <ul>
+            <li>Liderazgo de comunicación institucional y gestión de vocería</li>
+            <li>Diseño de mensajes clave y posicionamiento público</li>
+            <li>Dirección de comunicación de crisis durante el Paro Nacional</li>
+            <li>Relación estratégica con medios en contexto de alta exposición</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-item-date">
+          <div class="year-range">Anterior</div>
+          <span class="org-tag media">Prensa</span>
+        </div>
+        <div class="exp-item-content">
+          <h3>Reportero / Periodista Digital</h3>
+          <div class="org-name">El País Cali · Kiekyke.com · Gestarsalud · Colombia</div>
+          <ul>
+            <li>Redacción para edición impresa, revistas y plataformas digitales</li>
+            <li>Producción diaria con enfoque SEO, tráfico y engagement</li>
+            <li>Desarrollo de historias de interés público con enfoque analítico</li>
+            <li>Comunicación corporativa y contenidos reputacionales</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIAS -->
+<section id="competencias" class="skills-section">
+  <div class="page">
+    <div class="section-header">
+      <span class="section-num">§03</span>
+      <h2>Competencias clave</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Periodismo & Edición</h3>
+        <ul>
+          <li>Redacción periodística (digital e impresa)</li>
+          <li>Edición y dirección editorial</li>
+          <li>Titulares y optimización SEO on-page</li>
+          <li>CMS y publicación web</li>
+          <li>Cobertura de crisis</li>
+          <li>Corresponsalía internacional</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Comunicación Digital</h3>
+        <ul>
+          <li>Social Media Management</li>
+          <li>Planificación y calendarización</li>
+          <li>Copywriting persuasivo</li>
+          <li>Crecimiento de audiencias</li>
+          <li>Google Analytics (nivel funcional)</li>
+          <li>Estrategia de contenidos multicanal</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Comunicación Institucional</h3>
+        <ul>
+          <li>Storytelling estratégico</li>
+          <li>Gestión de reputación pública</li>
+          <li>Comunicación de crisis</li>
+          <li>Relaciones con medios</li>
+          <li>Comunicados y mensajes clave</li>
+          <li>IA aplicada a comunicación</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion" class="education-section">
+  <div class="page">
+    <div class="section-header">
+      <span class="section-num">§04</span>
+      <h2>Formación académica</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="degree">Máster en Comunicación Digital</div>
+        <div class="institution">Universidad de Alicante · España</div>
+      </div>
+      <div class="edu-card">
+        <div class="degree">Posgrado en Comunicación y Narrativas Digitales</div>
+        <div class="institution">Politécnico Grancolombiano · Colombia</div>
+      </div>
+      <div class="edu-card">
+        <div class="degree">Comunicador Social y Periodista</div>
+        <div class="institution">Universidad UNIMINUTO · Colombia</div>
+      </div>
+      <div class="edu-card">
+        <div class="degree">Diplomado en Productividad con IA</div>
+        <div class="institution">Banco Santander</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section">
+  <div class="page">
+    <div>
+      <h2>Hablemos.</h2>
+      <p>Disponible para proyectos de periodismo digital, corresponsalía, comunicación institucional, edición y estrategia de contenidos para España y Latinoamérica.</p>
+      <p style="margin-top:12px;">Trabajo presencial en Barcelona. Disponible 100% en remoto.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:davidquinteroperiodista@gmail.com" class="contact-link-item">
+        <span class="link-label">Correo electrónico</span>
+        <span class="link-value">davidquinteroperiodista@gmail.com</span>
+      </a>
+      <a href="tel:+34722505827" class="contact-link-item">
+        <span class="link-label">Teléfono / WhatsApp</span>
+        <span class="link-value">+34 722 505 827</span>
+      </a>
+      <a href="https://www.linkedin.com/in/davidquinteroperiodista" target="_blank" class="contact-link-item">
+        <span class="link-label">LinkedIn</span>
+        <span class="link-value">linkedin.com/in/davidquinteroperiodista</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2025 David Quintero · Periodista &amp; Estratega de Comunicación · Barcelona, España</span>
+</footer>
+
+</body>
+</html>
